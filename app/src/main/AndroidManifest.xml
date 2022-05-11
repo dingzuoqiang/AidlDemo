@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.aidldemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AidlDemo">
+        <service
+            android:name=".aidl.MyAidlService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":aidl">
+
+            <intent-filter>
+                //该Service可以响应带有com.example.aidldemo.IMyAidlInterface这个action的Intent。
+                //此处Intent的action必须写成“服务器端包名.aidl文件名”
+                <action android:name="com.example.aidldemo.IMyAidlInterface" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AidlDemo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AidlDemo</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="add_person">addPerson</string>
+
+</resources>
